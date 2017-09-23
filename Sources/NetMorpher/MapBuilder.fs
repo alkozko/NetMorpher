@@ -10,7 +10,7 @@ open NetMorpher.Persistent
 
 module BinaryDataLoader =
 
-    let loadAll = 
+    let LoadAll = 
         let binarySerializer = FsPickler.CreateBinarySerializer()
 
         let lemmas = using (File.OpenRead <| DataFolder.Data.lemmas)
@@ -23,7 +23,7 @@ module BinaryDataLoader =
         lemmas, gramemmes, types
 
 module TrieMapBuilder =
-    let buildMap (lemmas: LemmasTuple list, gramemmes: GramemesTuple list, types: LemmaLinkTypeTuple list) =
+    let BuildMap (lemmas: LemmasTuple list, gramemmes: GramemesTuple list, types: LemmaLinkTypeTuple list) =
         let lemmasDict = lemmas
                         |> Seq.map (fun (id, text, gr, forms, link) -> 
                                     let found, lid = false, []

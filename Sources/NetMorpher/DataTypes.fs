@@ -9,7 +9,7 @@ namespace NetMorpher.Persistent
     open System.IO
 
     module DataFolder =
-        let private dataFolderPath =  __SOURCE_DIRECTORY__ + "../../Data"
+        let private dataFolderPath =  __SOURCE_DIRECTORY__ + "../../../Data"
         let GetPath fileName =
             Path.Combine(dataFolderPath, fileName)
 

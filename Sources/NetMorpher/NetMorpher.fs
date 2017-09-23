@@ -1,4 +1,4 @@
-namespace NetMorpher
+namespace NetMorpher.Analyser
 
 open StringUtils
 open NetMorpher.Prediction
@@ -6,7 +6,7 @@ open NetMorpher.MapBuilder
 
 type NetMorpher() = 
     let path =  __SOURCE_DIRECTORY__ 
-    let data, index = BinaryDataLoader.loadAll |> TrieMapBuilder.buildMap
+    let data, index = BinaryDataLoader.LoadAll |> TrieMapBuilder.BuildMap
     
     member this.Index = index
 

@@ -1,4 +1,7 @@
-#load "NetMorpher.fs"
-open NetMorpher
+#load "../../references.fsx"
+open NetMorpher.Analyser
 
-// Define your library scripting code here
+
+let morpher = NetMorpher()
+
+printf "%s" <| morpher.LemmatizeToken "хомякового"
