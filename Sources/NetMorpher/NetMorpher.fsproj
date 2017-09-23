@@ -12,9 +12,11 @@
   <ItemGroup>
     <Compile Include="Utils.fs" />
     <Compile Include="Types.fs" />
+    <Compile Include="DataTypes.fs" />
     <Compile Include="DataLoader.fs" />
     <Compile Include="NetMorpher.fs" />
     <None Include="Script.fsx" />
+    <None Include="Scripts/TransformData.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO.Compression" />

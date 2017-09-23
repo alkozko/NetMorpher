@@ -5,3 +5,5 @@ nuget FAKE
 nuget FSharp.Core
 nuget FSharp.Compiler.Tools
 nuget FSharp.Data.XMLProvider
+nuget FsPickler
+nuget FsPickler.Json
