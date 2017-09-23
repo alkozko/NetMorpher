@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{66B9ECD9-F736-4C84-BE9C-AECB77EBD423}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "NetMorpher", "Sources\NetMorpher\NetMorpher.fsproj", "{D46C2F60-8A90-4D20-9BB7-393E1E142447}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetMorpher.Structures", "Sources\NetMorpher.Structures\NetMorpher.Structures.csproj", "{49894301-0DBF-4814-8D04-A16396D66C34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B5F6ECD2-AC43-463D-BE32-71840326E271}"
+	ProjectSection(SolutionItems) = preProject
+		build.cmd = build.cmd
+		build.fsx = build.fsx
+		build.sh = build.sh
+		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{03279BA7-81B4-4FC9-8F3D-5E2E6DF9566F}"
+	ProjectSection(SolutionItems) = preProject
+		.paket\paket.exe = .paket\paket.exe
+		.paket\Paket.Restore.targets = .paket\Paket.Restore.targets
+		.paket\paket.targets = .paket\paket.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D46C2F60-8A90-4D20-9BB7-393E1E142447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46C2F60-8A90-4D20-9BB7-393E1E142447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46C2F60-8A90-4D20-9BB7-393E1E142447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46C2F60-8A90-4D20-9BB7-393E1E142447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49894301-0DBF-4814-8D04-A16396D66C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49894301-0DBF-4814-8D04-A16396D66C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49894301-0DBF-4814-8D04-A16396D66C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49894301-0DBF-4814-8D04-A16396D66C34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D46C2F60-8A90-4D20-9BB7-393E1E142447} = {66B9ECD9-F736-4C84-BE9C-AECB77EBD423}
+		{49894301-0DBF-4814-8D04-A16396D66C34} = {66B9ECD9-F736-4C84-BE9C-AECB77EBD423}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C755F0A-4AC0-4FB0-BB15-190786C92831}
+	EndGlobalSection
+EndGlobal
