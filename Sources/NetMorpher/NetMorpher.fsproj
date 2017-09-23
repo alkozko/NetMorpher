@@ -10,10 +10,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utils.fs" />
+    <Compile Include="StringUtils.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="DataTypes.fs" />
-    <Compile Include="DataLoader.fs" />
+    <Compile Include="MapBuilder.fs" />
     <Compile Include="NetMorpher.fs" />
     <None Include="Script.fsx" />
     <None Include="Scripts/TransformData.fsx" />
