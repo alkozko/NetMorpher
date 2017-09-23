@@ -1,9 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Condition="$(OS)=='Unix'">
+    <FscToolPath>../../tools</FscToolPath>
+    <FscToolExe>fsc.exe</FscToolExe>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(OS)=='Windows_NT'">
+    <FscToolPath>../../packages/FSharp.Compiler.Tools/tools</FscToolPath>
+    <FscToolExe>fsc.exe</FscToolExe>
+  </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition="$(OS)=='Windows_NT'" />
   <ItemGroup>
     <ProjectReference Include="..\NetMorpher.Structures\NetMorpher.Structures.csproj">
       <Name>NetMorpher.csproj</Name>
