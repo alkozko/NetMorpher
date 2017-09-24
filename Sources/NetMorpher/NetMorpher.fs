@@ -1,12 +1,10 @@
 namespace NetMorpher.Analyser
 
 open System.Collections.Generic
-open System.IO
 open StringUtils
 open NetMorpher.Prediction
 open NetMorpher.Structures.TrieMap
 open NetMorpher.Structures
-open MBrace.FsPickler
 
 type NetMorpher(data:TrieMap<int[]>, grIndex: string[], index: LemmaStruct[]) = 
 

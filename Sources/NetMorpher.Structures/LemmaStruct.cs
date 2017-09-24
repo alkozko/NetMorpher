@@ -23,7 +23,7 @@ namespace NetMorpher.Structures
         public LemmaStruct GetFinal()
         {
             if (Parent != null)
-                return GetFinal();
+                return Parent.GetFinal();
 
             return this;
         }
