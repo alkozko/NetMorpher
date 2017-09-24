@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NetMorpher.Structures.TrieMap
@@ -8,7 +9,7 @@ namespace NetMorpher.Structures.TrieMap
     /// The Trie Map Data Structure (a.k.a Prefix Tree).
     /// </summary>
     /// <typeparam name="TRecord">The type of records attached to words</typeparam>
-
+    [Serializable]
     public class TrieMap<TRecord> where TRecord: class 
     {
         private int _count;
@@ -18,6 +19,21 @@ namespace NetMorpher.Structures.TrieMap
         {
             _count = 0;
             _root = new TrieMapNode<TRecord>(' ', default(TRecord));
+        }
+
+        public TrieMap(IEnumerable<TrieMapNode<TRecord>> childs)
+        {
+            _count = 0;
+            _root = new TrieMapNode<TRecord>(' ', default(TRecord));
+            foreach (var child in childs)
+            {
+                _root.AddChildren(child.Key, child);
+            }
+        }
+
+        public List<TrieMapNode<TRecord>> GetChilds()
+        {
+            return _root.Children.ToList();
         }
 
         public int Count => _count;
@@ -33,13 +49,15 @@ namespace NetMorpher.Structures.TrieMap
 
             foreach (char key in word)
             {
-                if (!current.HasChildren(key))
+                var child = current.GetChildrenOrDefault(key);
+
+                if (child == null)
                 {
                     var newTrieNode = new TrieMapNode<TRecord>(key, default(TRecord));
-                    current.AddChildren(key, newTrieNode);
+                    child = current.AddChildren(key, newTrieNode);
                 }
 
-                current = current.GetChildren(key);
+                current = child;
             }
 
             if (current.Record != null)
@@ -60,7 +78,9 @@ namespace NetMorpher.Structures.TrieMap
 
             foreach (char key in word)
             {
-                if (!current.HasChildren(key))
+                var child = current.GetChildrenOrDefault(key);
+
+                if (child == null)
                 {
                     records = GetAllChilds(current, prefixWord.ToString());
                     prefix = prefixWord.ToString();
@@ -68,7 +88,7 @@ namespace NetMorpher.Structures.TrieMap
                 }
 
                 prefixWord.Append(key);
-                current = current.GetChildren(key);
+                current = child;
             }
 
             if (current.Record == null)

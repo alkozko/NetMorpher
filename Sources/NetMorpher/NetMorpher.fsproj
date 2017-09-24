@@ -1,16 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup Condition="$(OS)=='Unix'">
-    <FscToolPath>../../tools</FscToolPath>
-    <FscToolExe>fsc.exe</FscToolExe>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(OS)=='Windows_NT'">
-    <FscToolPath>../../packages/FSharp.Compiler.Tools/tools</FscToolPath>
-    <FscToolExe>fsc.exe</FscToolExe>
-  </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup Condition="$(OS)=='Unix'" />
+  <PropertyGroup Condition="$(OS)=='Windows_NT'" />
   <ItemGroup>
     <ProjectReference Include="..\NetMorpher.Structures\NetMorpher.Structures.csproj">
       <Name>NetMorpher.csproj</Name>
@@ -18,13 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StringUtils.fs" />
-    <Compile Include="Types.fs" />
     <Compile Include="DataTypes.fs" />
-    <Compile Include="MapBuilder.fs" />
+    <None Include="Processing/OdictDataLoader.fsx" />
+    <None Include="Processing/MapBuilder.fsx" />
+    <None Include="Processing/CreateBinaryData.fsx" />
     <Compile Include="Prediction.fs" />
     <Compile Include="NetMorpher.fs" />
     <None Include="Script.fsx" />
-    <None Include="Scripts/TransformData.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.IO.Compression" />
