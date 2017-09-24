@@ -18,8 +18,11 @@ let words = File.ReadAllLines <| DataFolder.GetPath "onegin.txt"
                 |> Seq.filter (fun w -> not <| Regex.IsMatch(w, @"\P{IsCyrillic}"))
                 |> Seq.toArray
 
-let words = words |> Array.append words |> Array.append words |> Array.append words |> Array.append words |> Array.append words 
+let megaWords = Array.concat [|words;words;words;words;words; words;words;words;words|] 
 
 #time
-lemmatize words
+lemmatize megaWords
 #time
+
+
+megaWords.Length
